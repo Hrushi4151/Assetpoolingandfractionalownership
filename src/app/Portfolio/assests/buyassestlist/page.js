@@ -344,26 +344,7 @@ export default function Main() {
   }, []);
   return (
     <div className="mx-auto m-4 md:m-8 md:px-16 px-2 h-screen">
-      {DeleteCartState ? (
-        <div className="DeleteCart-main">
-          <div className="DeleteCart">
-            <h2>Title{Deletedata.AssestTitle}</h2>
-            <h2>
-              Profit{Deletedata.AssestBuyPrice - Deletedata.OrginalBuyPrice}
-            </h2>
-            <h2>BuyPrice{Deletedata.OrginalBuyPrice}</h2>
-            <h2>Sell Price{Deletedata.AssestBuyPrice}</h2>
-            <button onClick={handleWithdraw}>sell</button>
-            <button
-              onClick={() => {
-                setDeleteCartState(false);
-              }}
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      ) : (
+      {DeleteCartState && (
         <div class="fixed top-32 left-[10%] md:left-[30%] lg:left-[40%]  z-50 flex flex-col bg-clip-border rounded-xl bg-gradient-to-tr from-blue-900 to-gray-800 text-white shadow-gray-900/20 shadow-md w-full max-w-[20rem] p-3">
           <div className="mb-6 md:mb-0 flex flex-row justify-content-center justify-center my-2">
             <p className="text-2xl text-center text-white font-bold ml-3 bg-red-500 w-auto h-auto py-1 pr-2">
